@@ -15,11 +15,13 @@ public class StudentSchedulingService {
         System.out.println("Running with cron expression : "+ LocalDateTime.now());
     }
 
+    // Waits 3 seconds after the method completes before next start
 //    @Scheduled(fixedDelay = 1000)
 //    public void fixedDelay() {
 //        System.out.println("Running with fixed delay: " + LocalDateTime.now());
 //    }
 
+    // Attempts to start every 3 seconds (interval measured from method start)
     @Scheduled(initialDelay = 1000, fixedRate = 3000)
     public void fixedRateWithInitialDelay() {
         System.out.println("Running with fixed rate and initial delay: " + LocalDateTime.now());
