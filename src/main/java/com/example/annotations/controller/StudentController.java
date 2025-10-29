@@ -30,6 +30,11 @@ public class StudentController {
         return studentService.getStudents();
     }
 
+    @GetMapping("/search")
+    public Student getStudentById(@RequestParam(name = "id", required = true) long id) {
+        return studentService.getStudentById(id);
+    }
+
     @PutMapping("/{id}")
     public boolean updateStudent(@PathVariable long id, @RequestBody Student student) {
         return studentService.updateStudent(id, student);

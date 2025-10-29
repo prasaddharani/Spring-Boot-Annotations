@@ -46,4 +46,8 @@ public class StudentService {
         studentRepository.deleteById(id);
     }
 
+    @Cacheable("students")
+    public Student getStudentById(long id) {
+        return studentRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Student with id: " + id + " not present"));
+    }
 }
