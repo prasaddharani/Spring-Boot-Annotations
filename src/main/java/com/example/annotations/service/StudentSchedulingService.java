@@ -22,7 +22,7 @@ public class StudentSchedulingService {
 //    }
 
     // Attempts to start every 3 seconds (interval measured from method start)
-    @Scheduled(initialDelay = 1000, fixedRate = 3000)
+    //@Scheduled(initialDelay = 1000, fixedRate = 3000)
     public void fixedRateWithInitialDelay() {
         System.out.println("Running with fixed rate and initial delay: " + LocalDateTime.now());
     }
