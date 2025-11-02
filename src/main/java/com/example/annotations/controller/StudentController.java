@@ -2,11 +2,9 @@ package com.example.annotations.controller;
 
 import com.example.annotations.model.Student;
 import com.example.annotations.service.StudentService;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.CachePut;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,8 +23,8 @@ public class StudentController {
     }
 
     @GetMapping
-    public List<Student> getStudents() {
-        log.info("GetStudents api call");
+    public List<Student> getStudents(HttpServletRequest request) {
+        log.info("GetStudents api call count: {}", request.getAttribute("counter"));
         return studentService.getStudents();
     }
 
